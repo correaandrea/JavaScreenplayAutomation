@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.364s</div>
+<div class="counter">4.293s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,60 +61,13 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
+<a href="#tab0">Tests</a>
 </li>
 <li>
-<a href="#tab1">Tests</a>
-</li>
-<li>
-<a href="#tab2">Standard error</a>
+<a href="#tab1">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="Inicio de sesión simulado exitoso"></a>
-<h3 class="failures">Inicio de sesión simulado exitoso</h3>
-<span class="code">
-<pre>io.cucumber.junit.UndefinedStepException: The step 'que estoy en la página de inicio de sesión' and 5 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Given(&quot;que estoy en la página de inicio de sesión&quot;)
-public void queEstoyEnLaPáginaDeInicioDeSesión() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When(&quot;ingreso {string} en el campo de correo electrónico&quot;)
-public void ingresoEnElCampoDeCorreoElectrónico(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When(&quot;ingreso {string} en el campo de contraseña&quot;)
-public void ingresoEnElCampoDeContraseña(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When(&quot;hago clic en el botón {string}&quot;)
-public void hagoClicEnElBotón(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;debería seguir en la página de inicio de sesión&quot;)
-public void deberíaSeguirEnLaPáginaDeInicioDeSesión() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;no debería ver ningún mensaje de error explícito&quot;)
-public void noDeberíaVerNingúnMensajeDeErrorExplícito() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -125,13 +78,13 @@ public void noDeberíaVerNingúnMensajeDeErrorExplícito() {
 </tr>
 </thead>
 <tr>
-<td class="failures">Inicio de sesión simulado exitoso</td>
-<td class="failures">1.364s</td>
-<td class="failures">failed</td>
+<td class="success">Inicio de sesión simulado exitoso</td>
+<td class="success">4.293s</td>
+<td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab2" class="tab">
+<div id="tab1" class="tab">
 <h2>Standard error</h2>
 <span class="code">
 <pre>[Test worker] INFO  - 
@@ -142,14 +95,20 @@ public void noDeberíaVerNingúnMensajeDeErrorExplícito() {
 
 Inicio de sesión simulado exitoso(autenticación-de-usuario;inicio-de-sesión-simulado-exitoso)
 --------------------------------------------------------------------------------
-[Test worker] INFO  - ?[96m
-  _____   ___   ___   _____     ___   ___   _  _   ___    ___   _  _    ___ 
- |_   _| | __| / __| |_   _|   | _ \ | __| | \| | |   \  |_ _| | \| |  / __|
-   | |   | _|  \__ \   | |     |  _/ | _|  | .` | | |) |  | |  | .` | | (_ |
-   |_|   |___| |___/   |_|     |_|   |___| |_|\_| |___/  |___| |_|\_|  \___|
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--start-maximized, --test-type, --no-sandbox, --ignore-certificate-errors, \r\n                   --di..., --disable-default-apps, --disable-extensions-file-a..., \r\n                   --in..., --disable-infobars,--disabl..., --remote-allow-origins=*], extensions: []}}
+jun 26, 2025 4:55:08 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 138
+jun 26, 2025 4:55:08 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 138.0.7204.49. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+[Test worker] INFO  - ?[92m
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
 
 Inicio de sesión simulado exitoso
------------------------------------------------------------------------------?[0m
+----------------------------------------------------------------------?[0m
 </pre>
 </span>
 </div>
@@ -161,7 +120,7 @@ Inicio de sesión simulado exitoso
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.6</a> at 25 jun. 2025 23:23:02</p>
+<a href="http://www.gradle.org">Gradle 8.6</a> at 26 jun 2025 16:55:12</p>
 </div>
 </div>
 </body>

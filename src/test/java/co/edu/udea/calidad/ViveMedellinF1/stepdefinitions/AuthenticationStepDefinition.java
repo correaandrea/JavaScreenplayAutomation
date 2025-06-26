@@ -1,5 +1,8 @@
 package co.edu.udea.calidad.ViveMedellinF1.stepdefinitions;
 
+import co.edu.udea.calidad.ViveMedellinF1.questions.AuthQuestion;
+import co.edu.udea.calidad.ViveMedellinF1.tasks.AuthenticationTask;
+import co.edu.udea.calidad.ViveMedellinF1.userinterfaces.UserInterface; // Asegúrate de que esta importación sea correcta
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,7 +13,16 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
+import net.serenitybdd.screenplay.questions.WebElementQuestion;
 import org.openqa.selenium.WebDriver;
+
+// Importar los Targets específicos desde UserInterface
+import static co.edu.udea.calidad.ViveMedellinF1.userinterfaces.UserInterface.LOGIN_TITTLE; // Para el texto "undefined"
+import static co.edu.udea.calidad.ViveMedellinF1.userinterfaces.UserInterface.USER_BUTTON; // Para el botón de usuario
+
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static org.hamcrest.Matchers.containsString;
 
 public class AuthenticationStepDefinition {
 
@@ -21,39 +33,28 @@ public class AuthenticationStepDefinition {
     @Before
     public void config(){
         OnStage.setTheStage(new OnlineCast());
-        OnStage.theActorCalled("usuario");
+        usuario = OnStage.theActorCalled("usuario");
         usuario.can(BrowseTheWeb.with(cdriver));
     }
 
     @Given("que estoy en la página de inicio de sesión")
-    public void queEstoyEnLaPáginaDeInicioDeSesión() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @When("ingreso {string} en el campo de correo electrónico")
-    public void ingresoEnElCampoDeCorreoElectrónico(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @When("ingreso {string} en el campo de contraseña")
-    public void ingresoEnElCampoDeContraseña(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @When("hago clic en el botón {string}")
-    public void hagoClicEnElBotón(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Then("debería seguir en la página de inicio de sesión")
-    public void deberíaSeguirEnLaPáginaDeInicioDeSesión() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Then("no debería ver ningún mensaje de error explícito")
-    public void noDeberíaVerNingúnMensajeDeErrorExplícito() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void queEstoyEnLaPaginaDeInicioDeSesion() {
+        usuario.attemptsTo(Open.url("https://vive-medellin.vercel.app/Login"));
     }
 
+    @When("ingreso mis credenciales {string} y {string} y doy click al boton iniciar sesion y doy click al boton de regreso")
+    public void ingresoMisCredencialesYClickBotones(String email, String password) {
+        usuario.attemptsTo(AuthenticationTask.loginWith(email, password));
+    }
+
+    @Then("debo poder ver el icono de usuario en la pantalla")
+    public void deboPoderVerElIconoDeUsuarioEnLaPantalla() {
+        // Validamos la aparición del texto "undefined" en la página de inicio (home)
+                usuario.should(
+                        seeThat(AuthQuestion.login(), org.hamcrest.Matchers.is(true))
+        );
+    }
 }
+
+
+

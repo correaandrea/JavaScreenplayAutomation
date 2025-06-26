@@ -8,8 +8,5 @@ Feature: Autenticación de usuario
 
   Scenario: Inicio de sesión simulado exitoso
     Given que estoy en la página de inicio de sesión
-    When ingreso "test@example.com" en el campo de correo electrónico
-    And ingreso "password123" en el campo de contraseña
-    And hago clic en el botón "Iniciar sesión"
-    Then debería seguir en la página de inicio de sesión
-    And no debería ver ningún mensaje de error explícito
+    When ingreso mis credenciales "test@example.com" y "password123" y doy click al boton iniciar sesion y doy click al boton de regreso
+    Then debo poder ver el icono de usuario en la pantalla

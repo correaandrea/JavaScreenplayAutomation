@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Autenticación de usuario" skipped="1" tests="1" time="0.64" timestamp="2025-06-25 11:23:01"><testcase name="Inicio de sesión simulado exitoso"><skipped/></testcase></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Autenticación de usuario" skipped="1" tests="1" time="0.16" timestamp="2025-06-26 04:45:04"><testcase name="Inicio de sesión simulado exitoso"><skipped/></testcase></testsuite>

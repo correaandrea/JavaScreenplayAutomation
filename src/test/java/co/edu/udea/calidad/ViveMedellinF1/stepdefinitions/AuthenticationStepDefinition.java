@@ -49,7 +49,6 @@ public class AuthenticationStepDefinition {
 
     @Then("debo poder ver el icono de usuario en la pantalla")
     public void deboPoderVerElIconoDeUsuarioEnLaPantalla() {
-        // Validamos la aparición del texto "undefined" en la página de inicio (home)
                 usuario.should(
                         seeThat(AuthQuestion.login(), org.hamcrest.Matchers.is(true))
         );

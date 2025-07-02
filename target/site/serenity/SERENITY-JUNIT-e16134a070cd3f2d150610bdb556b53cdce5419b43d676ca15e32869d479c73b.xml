@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="2" failures="0" name="Funcionalidad de Autenticación" skipped="0" tests="2" time="0.31" timestamp="2025-07-02 02:23:54"><testcase name="Registro de un nuevo usuario de forma exitosa"><error type="java.lang.NullPointerException"/><system-err>null&#13;
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:903)&#13;
+co.edu.udea.calidad.ViveMedellinF1.stepdefinitions.AuthenticationStepDefinition.meEncuentroEnLaPaginaDeInicio(AuthenticationStepDefinition.java:30)&#13;
+✽.me encuentro en la pagina de inicio(file:///C:/Users/aca12/OneDrive/Documentos/Archivos%20Andrea/Universidad/Semestre%20VII/Calidad/JavaScreenplayAutomation/src/test/resources/features/authentication.feature:11)&#13;
+</system-err></testcase><testcase name="Inicio de sesión de un usuario existente"><error type="java.lang.NullPointerException"/><system-err>null&#13;
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:903)&#13;
+co.edu.udea.calidad.ViveMedellinF1.stepdefinitions.AuthenticationStepDefinition.meEncuentroEnLaPaginaDeInicio(AuthenticationStepDefinition.java:30)&#13;
+✽.me encuentro en la pagina de inicio(file:///C:/Users/aca12/OneDrive/Documentos/Archivos%20Andrea/Universidad/Semestre%20VII/Calidad/JavaScreenplayAutomation/src/test/resources/features/authentication.feature:21)&#13;
+</system-err></testcase></testsuite>

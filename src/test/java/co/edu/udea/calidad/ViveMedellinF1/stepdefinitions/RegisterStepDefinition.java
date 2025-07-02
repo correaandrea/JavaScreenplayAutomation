@@ -42,9 +42,9 @@ public class RegisterStepDefinition {
     }
 
     @And("me registro con los datos: {string}, {string}, {string}, {string} y {string}")
-    public void meRegistroConLosDatos(String nombre, String apellido, String correo, String contrasena, String confirmarContrasena) {
+    public void meRegistroConLosDatos(String nombre, String apellido, String correo, String contraseña, String confirmarContraseña) {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                FillRegistrationForm.withDetails(nombre, apellido, correo, contrasena, confirmarContrasena),
+                FillRegistrationForm.withDetails(nombre, apellido, correo, contraseña, confirmarContraseña),
                 Click.on(RegistrationPageUI.CREATE_ACCOUNT_BUTTON),
                 WaitUntil.the(AuthenticatedPageUI.USERNAME_GREETING, isVisible()).forNoMoreThan(10).seconds()
         );

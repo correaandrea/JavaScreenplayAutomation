@@ -6,8 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/navigation.feature",
+        features = "src/test/resources/features/register.feature",
         glue = "co.edu.udea.calidad.ViveMedellinF1.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
-public class NavigationRunner {}
+public class RegisterRunner {
+}

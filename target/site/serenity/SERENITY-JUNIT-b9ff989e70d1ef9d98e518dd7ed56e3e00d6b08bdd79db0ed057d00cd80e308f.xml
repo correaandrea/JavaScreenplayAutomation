@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Inicio de sesión de usuario" skipped="0" tests="1" time="2.63" timestamp="2025-07-05 12:30:44"><testcase name="Inicio de sesión exitoso con credenciales válidas"><failure message="&#10;Expected: an element that is visible&#10;     but: no matching element found by [User name located with: xpath: /html/body/div/div[1]/nav/div[3]/div/div/span]" type="java.lang.AssertionError">
+Expected: an element that is visible
+     but: no matching element found by [User name located with: xpath: /html/body/div/div[1]/nav/div[3]/div/div/span]</failure><system-err>
+Expected: an element that is visible
+     but: no matching element found by [User name located with: xpath: /html/body/div/div[1]/nav/div[3]/div/div/span]&#13;
+co.edu.udea.calidad.ViveMedellinF1.stepdefinitions.LoginStepDefinition.hagoClicEnElBotonParaConfirmar(LoginStepDefinition.java:50)&#13;
+worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)&#13;
+worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)&#13;
+</system-err></testcase></testsuite>

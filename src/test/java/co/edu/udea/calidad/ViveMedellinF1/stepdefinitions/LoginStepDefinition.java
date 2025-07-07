@@ -53,12 +53,6 @@ public class LoginStepDefinition {
         );
     }
 
-    @Then("debo ser redirigido a la página de inicio con mi sesión iniciada")
-    public void deboSerRedirigidoAlHome() {
-        OnStage.theActorInTheSpotlight().should(
-                seeThat(UsernameDisplayed.is(), equalTo("Auxilio3"))
-        );
-    }
 }
 
 

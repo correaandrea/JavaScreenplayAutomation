@@ -3,17 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta http-equiv="x-ua-compatible" content="IE=edge"/>
-<title>Test results - Class Flujo completo de usuario</title>
+<title>Test results - Class Navegación entre secciones del sitio</title>
 <link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
 <link href="../css/style.css" rel="stylesheet" type="text/css"/>
 <script src="../js/report.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="content">
-<h1>Class Flujo completo de usuario</h1>
+<h1>Class Navegación entre secciones del sitio</h1>
 <div class="breadcrumbs">
 <a href="../index.html">all</a> &gt; 
-<a href="../packages/default-package.html">default-package</a> &gt; Flujo completo de usuario</div>
+<a href="../packages/default-package.html">default-package</a> &gt; Navegación entre secciones del sitio</div>
 <div id="summary">
 <table>
 <tr>
@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">3</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">4.702s</div>
+<div class="counter">5.189s</div>
 <p>duration</p>
 </div>
 </td>
@@ -78,8 +78,18 @@
 </tr>
 </thead>
 <tr>
-<td class="success">Un usuario nuevo se registra y navega entre las secciones</td>
-<td class="success">4.702s</td>
+<td class="success">Navegación del login al registro</td>
+<td class="success">0.801s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Navegación del registro al login</td>
+<td class="success">0.839s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Un usuario navega entre las secciones desde la página de inicio</td>
+<td class="success">3.549s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -93,13 +103,13 @@
    | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
    |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
 
-Un usuario nuevo se registra y navega entre las secciones(flujo-completo-de-usuario;un-usuario-nuevo-se-registra-y-navega-entre-las-secciones)
+Un usuario navega entre las secciones desde la página de inicio(navegación-entre-secciones-del-sitio;un-usuario-navega-entre-las-secciones-desde-la-página-de-inicio)
 --------------------------------------------------------------------------------
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--start-maximized, --test-type, --no-sandbox, --ignore-certificate-errors, \r\n                   --di..., --disable-default-apps, --disable-extensions-file-a..., \r\n                   --in..., --disable-infobars,--disabl..., --remote-allow-origins=*], extensions: []}}
-jul 05, 2025 12:37:59 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+jul 07, 2025 9:43:16 A. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 138
-jul 05, 2025 12:37:59 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+jul 07, 2025 9:43:16 A. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 138.0.7204.97. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 [Test worker] INFO  - ?[92m
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
@@ -107,7 +117,39 @@ WARNING: Unable to find version of CDP to use for 138.0.7204.97. You may need to
    | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
    |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
 
-Un usuario nuevo se registra y navega entre las secciones
+Un usuario navega entre las secciones desde la página de inicio
+----------------------------------------------------------------------?[0m
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Navegación del login al registro(navegación-entre-secciones-del-sitio;navegación-del-login-al-registro)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - ?[92m
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Navegación del login al registro
+----------------------------------------------------------------------?[0m
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Navegación del registro al login(navegación-entre-secciones-del-sitio;navegación-del-registro-al-login)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - ?[92m
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Navegación del registro al login
 ----------------------------------------------------------------------?[0m
 </pre>
 </span>
@@ -120,7 +162,7 @@ Un usuario nuevo se registra y navega entre las secciones
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.6</a> at 5 jul 2025 12:38:03</p>
+<a href="http://www.gradle.org">Gradle 8.6</a> at 7 jul 2025 9:43:21</p>
 </div>
 </div>
 </body>

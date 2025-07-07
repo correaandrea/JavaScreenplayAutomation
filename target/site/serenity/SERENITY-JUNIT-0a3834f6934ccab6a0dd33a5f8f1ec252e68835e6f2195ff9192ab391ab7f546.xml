@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="3" failures="0" name="Navegación entre secciones del sitio" skipped="0" tests="3" time="0.19" timestamp="2025-07-05 04:10:15"><testcase name="Un usuario navega entre las secciones desde la página de inicio"><error type="java.lang.NullPointerException"/><system-err>null&#13;
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:903)&#13;
+co.edu.udea.calidad.ViveMedellinF1.stepdefinitions.RegisterStepDefinition.queMeEncuentroEnLaPaginaDeInicio(RegisterStepDefinition.java:35)&#13;
+✽.que me encuentro en la página de inicio(file:///C:/Users/aca12/OneDrive/Documentos/Archivos%20Andrea/Universidad/Semestre%20VII/Calidad/JavaScreenplayAutomation/src/test/resources/features/navigation.feature:7)&#13;
+</system-err></testcase><testcase name="Navegación del login al registro"><error type="java.lang.NullPointerException"/><system-err>null&#13;
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:903)&#13;
+co.edu.udea.calidad.ViveMedellinF1.stepdefinitions.RegisterStepDefinition.queMeEncuentroEnLaPaginaDeInicio(RegisterStepDefinition.java:35)&#13;
+✽.que me encuentro en la página de inicio(file:///C:/Users/aca12/OneDrive/Documentos/Archivos%20Andrea/Universidad/Semestre%20VII/Calidad/JavaScreenplayAutomation/src/test/resources/features/navigation.feature:14)&#13;
+</system-err></testcase><testcase name="Navegación del registro al login"><error type="java.lang.NullPointerException"/><system-err>null&#13;
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:903)&#13;
+co.edu.udea.calidad.ViveMedellinF1.stepdefinitions.RegisterStepDefinition.queMeEncuentroEnLaPaginaDeInicio(RegisterStepDefinition.java:35)&#13;
+✽.que me encuentro en la página de inicio(file:///C:/Users/aca12/OneDrive/Documentos/Archivos%20Andrea/Universidad/Semestre%20VII/Calidad/JavaScreenplayAutomation/src/test/resources/features/navigation.feature:20)&#13;
+</system-err></testcase></testsuite>

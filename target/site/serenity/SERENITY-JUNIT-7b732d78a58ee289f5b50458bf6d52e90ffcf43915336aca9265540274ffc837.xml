@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="Inicio de sesión de usuario" skipped="0" tests="1" time="0.13" timestamp="2025-07-05 04:05:09"><testcase name="Inicio de sesión exitoso con credenciales válidas"><error type="java.lang.NullPointerException"/><system-err>null&#13;
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:903)&#13;
+co.edu.udea.calidad.ViveMedellinF1.stepdefinitions.RegisterStepDefinition.queMeEncuentroEnLaPaginaDeInicio(RegisterStepDefinition.java:35)&#13;
+✽.que me encuentro en la página de inicio(file:///C:/Users/aca12/OneDrive/Documentos/Archivos%20Andrea/Universidad/Semestre%20VII/Calidad/JavaScreenplayAutomation/src/test/resources/features/login.feature:7)&#13;
+</system-err></testcase></testsuite>

@@ -2,15 +2,22 @@ package co.edu.udea.calidad.ViveMedellinF1.stepdefinitions;
 
 import co.edu.udea.calidad.ViveMedellinF1.interactions.ClickOnSection;
 import co.edu.udea.calidad.ViveMedellinF1.questions.IsSectionVisible;
+import co.edu.udea.calidad.ViveMedellinF1.questions.IsOnLoginPage;
+import co.edu.udea.calidad.ViveMedellinF1.questions.IsOnRegistrationPage;
 import co.edu.udea.calidad.ViveMedellinF1.userinterfaces.HomePageUI;
+import co.edu.udea.calidad.ViveMedellinF1.userinterfaces.LoginPageUI;
+import co.edu.udea.calidad.ViveMedellinF1.userinterfaces.RegistrationPageUI;
 import co.edu.udea.calidad.ViveMedellinF1.userinterfaces.SectionUI;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Open;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static org.hamcrest.Matchers.is;
 
 public class NavigationStepDefinition {
@@ -24,6 +31,36 @@ public class NavigationStepDefinition {
     public void queIngresoDesdeElHome() {
         OnStage.theActorCalled("usuario").wasAbleTo(
                 Open.url("http://localhost:3000")
+        );
+    }
+
+    @And("hago clic en el enlace de registro")
+    public void hagoClicEnElEnlaceDeRegistro() {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                Click.on(LoginPageUI.REGISTER_LINK),
+                WaitUntil.the(RegistrationPageUI.CREATE_ACCOUNT_BUTTON, isVisible()).forNoMoreThan(10).seconds()
+        );
+    }
+
+    @And("hago clic en el enlace de iniciar sesión")
+    public void hagoClicEnElEnlaceDeIniciarSesion() {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                Click.on(RegistrationPageUI.LOGIN_LINK),
+                WaitUntil.the(LoginPageUI.CONFIRM_LOGIN_BUTTON, isVisible()).forNoMoreThan(10).seconds()
+        );
+    }
+
+    @Then("debería estar en la página de registro")
+    public void deberiaEstarEnLaPaginaDeRegistro() {
+        OnStage.theActorInTheSpotlight().should(
+                seeThat(IsOnRegistrationPage.now(), is(true))
+        );
+    }
+
+    @Then("debería estar en la página de inicio de sesión")
+    public void deberiaEstarEnLaPaginaDeInicioDeSesion() {
+        OnStage.theActorInTheSpotlight().should(
+                seeThat(IsOnLoginPage.now(), is(true))
         );
     }
 
@@ -81,3 +118,4 @@ public class NavigationStepDefinition {
         }
     }
 }
+

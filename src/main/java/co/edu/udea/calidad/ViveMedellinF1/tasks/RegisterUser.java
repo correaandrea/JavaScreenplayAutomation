@@ -2,7 +2,6 @@ package co.edu.udea.calidad.ViveMedellinF1.tasks;
 
 import co.edu.udea.calidad.ViveMedellinF1.interactions.FillRegistrationForm;
 import co.edu.udea.calidad.ViveMedellinF1.userinterfaces.AuthenticatedPageUI;
-import co.edu.udea.calidad.ViveMedellinF1.userinterfaces.HomePageUI;
 import co.edu.udea.calidad.ViveMedellinF1.userinterfaces.RegistrationPageUI;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -28,10 +27,11 @@ public class RegisterUser implements Task {
         this.confirmPassword = confirmPassword;
     }
 
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(HomePageUI.REGISTER_BUTTON),
+
                 FillRegistrationForm.withDetails(name, lastname, email, password, confirmPassword),
                 Click.on(RegistrationPageUI.CREATE_ACCOUNT_BUTTON),
                 WaitUntil.the(AuthenticatedPageUI.USERNAME_GREETING, isVisible()).forNoMoreThan(10).seconds()

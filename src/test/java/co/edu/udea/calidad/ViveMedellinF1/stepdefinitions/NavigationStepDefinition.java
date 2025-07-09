@@ -1,121 +1,88 @@
 package co.edu.udea.calidad.ViveMedellinF1.stepdefinitions;
 
-import co.edu.udea.calidad.ViveMedellinF1.interactions.ClickOnSection;
-import co.edu.udea.calidad.ViveMedellinF1.questions.IsSectionVisible;
 import co.edu.udea.calidad.ViveMedellinF1.questions.IsOnLoginPage;
 import co.edu.udea.calidad.ViveMedellinF1.questions.IsOnRegistrationPage;
-import co.edu.udea.calidad.ViveMedellinF1.userinterfaces.HomePageUI;
-import co.edu.udea.calidad.ViveMedellinF1.userinterfaces.LoginPageUI;
-import co.edu.udea.calidad.ViveMedellinF1.userinterfaces.RegistrationPageUI;
-import co.edu.udea.calidad.ViveMedellinF1.userinterfaces.SectionUI;
+import co.edu.udea.calidad.ViveMedellinF1.questions.IsOnSection;
+import co.edu.udea.calidad.ViveMedellinF1.tasks.NavigateTo;
+import co.edu.udea.calidad.ViveMedellinF1.userinterfaces.*;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import net.serenitybdd.annotations.Managed;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Open;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
-
+import net.serenitybdd.screenplay.waits.WaitUntil;
+import org.openqa.selenium.WebDriver;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
-import static org.hamcrest.Matchers.is;
+import static org.hamcrest.CoreMatchers.is;
 
 public class NavigationStepDefinition {
+
+    @Managed
+    WebDriver driver;
+
+    private Actor usuario = Actor.named("usuario");
 
     @Before
     public void setTheStage() {
         OnStage.setTheStage(new OnlineCast());
+        usuario.can(BrowseTheWeb.with(driver));
     }
 
-    @Given("que ingreso desde el home")
-    public void queIngresoDesdeElHome() {
-        OnStage.theActorCalled("usuario").wasAbleTo(
-                Open.url("http://localhost:3000")
-        );
+    @After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     @And("hago clic en el enlace de registro")
     public void hagoClicEnElEnlaceDeRegistro() {
-        OnStage.theActorInTheSpotlight().attemptsTo(
-                Click.on(LoginPageUI.REGISTER_LINK),
-                WaitUntil.the(RegistrationPageUI.CREATE_ACCOUNT_BUTTON, isVisible()).forNoMoreThan(10).seconds()
-        );
+        usuario.attemptsTo(Click.on(LoginPageUI.REGISTER_LINK),
+                WaitUntil.the(RegistrationPageUI.CREATE_ACCOUNT_BUTTON, isVisible()).forNoMoreThan(10).seconds());
     }
 
-    @And("hago clic en el enlace de iniciar sesión")
+    @When("hago clic en el enlace de iniciar sesión")
     public void hagoClicEnElEnlaceDeIniciarSesion() {
-        OnStage.theActorInTheSpotlight().attemptsTo(
-                Click.on(RegistrationPageUI.LOGIN_LINK),
-                WaitUntil.the(LoginPageUI.CONFIRM_LOGIN_BUTTON, isVisible()).forNoMoreThan(10).seconds()
-        );
+        usuario.attemptsTo(Click.on(RegistrationPageUI.LOGIN_LINK),
+                WaitUntil.the(LoginPageUI.CONFIRM_LOGIN_BUTTON, isVisible()).forNoMoreThan(10).seconds());
     }
 
     @Then("debería estar en la página de registro")
     public void deberiaEstarEnLaPaginaDeRegistro() {
-        OnStage.theActorInTheSpotlight().should(
-                seeThat(IsOnRegistrationPage.now(), is(true))
-        );
+        usuario.should(seeThat(IsOnRegistrationPage.now(), is(true)));
     }
 
     @Then("debería estar en la página de inicio de sesión")
     public void deberiaEstarEnLaPaginaDeInicioDeSesion() {
         OnStage.theActorInTheSpotlight().should(
-                seeThat(IsOnLoginPage.now(), is(true))
-        );
+                seeThat(IsOnLoginPage.now(), is(true)));
     }
 
     @When("hago clic en la sección {string}")
     public void hagoClicEnLaSeccion(String seccion) {
-        OnStage.theActorInTheSpotlight().attemptsTo(
-                ClickOnSection.named(getTargetFromName(seccion))
-        );
+        usuario.attemptsTo(NavigateTo.theSection(seccion));
     }
 
     @And("luego hago clic en la sección {string}")
     public void luegoHagoClicEnOtraSeccion(String seccion) {
-        OnStage.theActorInTheSpotlight().attemptsTo(
-                ClickOnSection.named(getTargetFromName(seccion))
-        );
+        usuario.attemptsTo(NavigateTo.theSection(seccion));
     }
 
     @And("finalmente hago clic en la sección {string}")
     public void finalmenteHagoClicEnOtraSeccion(String seccion) {
-        OnStage.theActorInTheSpotlight().attemptsTo(
-                ClickOnSection.named(getTargetFromName(seccion))
-        );
+        usuario.attemptsTo(NavigateTo.theSection(seccion));
     }
 
     @Then("debo estar en la sección {string}")
     public void deboEstarEnLaSeccion(String seccion) {
-        OnStage.theActorInTheSpotlight().should(
-                seeThat(IsSectionVisible.on(getValidationTarget(seccion)), is(true))
-        );
-    }
-
-    private net.serenitybdd.screenplay.targets.Target getTargetFromName(String name) {
-        switch (name.toLowerCase()) {
-            case "eventos y actividades":
-                return HomePageUI.SECTION_EVENTOS;
-            case "comunidades":
-                return HomePageUI.SECTION_COMUNIDADES;
-            case "valoraciones":
-                return HomePageUI.SECTION_VALORACIONES;
-            default:
-                throw new IllegalArgumentException("Sección no reconocida: " + name);
-        }
-    }
-
-    private net.serenitybdd.screenplay.targets.Target getValidationTarget(String name) {
-        switch (name.toLowerCase()) {
-            case "eventos y actividades":
-                return SectionUI.SECTION_EVENTOS_VISIBLE;
-            case "comunidades":
-                return SectionUI.SECTION_COMUNIDADES_VISIBLE;
-            case "valoraciones":
-                return SectionUI.SECTION_VALORACIONES_VISIBLE;
-            default:
-                throw new IllegalArgumentException("Sección no reconocida para validación: " + name);
-        }
+        usuario.should(seeThat(IsOnSection.called(seccion), is(true)));
     }
 }
 

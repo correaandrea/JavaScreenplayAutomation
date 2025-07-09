@@ -27,11 +27,9 @@ public class RegisterUser implements Task {
         this.confirmPassword = confirmPassword;
     }
 
-
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-
                 FillRegistrationForm.withDetails(name, lastname, email, password, confirmPassword),
                 Click.on(RegistrationPageUI.CREATE_ACCOUNT_BUTTON),
                 WaitUntil.the(AuthenticatedPageUI.USERNAME_GREETING, isVisible()).forNoMoreThan(10).seconds()

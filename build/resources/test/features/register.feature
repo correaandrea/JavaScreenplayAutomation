@@ -9,6 +9,6 @@ Feature: Funcionalidad de Registro de Usuario
   Scenario: Registro exitoso de un nuevo usuario
     Given que me encuentro en la página de inicio
     When navego a la pagina de registro
-    And me registro con los datos: "Sofias", "Torres", "sofias.torres@udea.edu.co", "segura123" y "segura123"
-    Then deberia ser redirigido al home y ver mi sesion iniciada con el nombre "Sofias"
+    And me registro con los datos: "Andrea", "Correa", "andrea.correa@udea.edu.co", "segura123" y "segura123"
+    Then deberia ser redirigido al home y ver mi sesion iniciada con el nombre "Andrea"
 

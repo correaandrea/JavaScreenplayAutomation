@@ -61,13 +61,11 @@ public class NavigationStepDefinition {
 
     @Then("debería estar en la página de inicio de sesión")
     public void deberiaEstarEnLaPaginaDeInicioDeSesion() {
-        OnStage.theActorInTheSpotlight().should(
-                seeThat(IsOnLoginPage.now(), is(true)));
+        usuario.should(seeThat(IsOnLoginPage.now(), is(true)));
     }
 
     @When("hago clic en la sección {string}")
-    public void hagoClicEnLaSeccion(String seccion) {
-        usuario.attemptsTo(NavigateTo.theSection(seccion));
+    public void hagoClicEnLaSeccion(String seccion) {usuario.attemptsTo(NavigateTo.theSection(seccion));
     }
 
     @And("luego hago clic en la sección {string}")
